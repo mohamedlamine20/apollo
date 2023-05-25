@@ -58,7 +58,9 @@ export class BookService {
       query: gql`
         {
           allAuthors{
-              id           
+              id     
+              firstName
+              lastName 
           }       
         }
       `

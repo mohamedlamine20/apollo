@@ -28,7 +28,7 @@ export class AppComponent {
 
 
   constructor(private apollo: Apollo,private bookService:BookService) {}
- 
+  
   ngOnInit() {
     this.bookService.loadBook().subscribe(result=>{     
       this.books=result.data.allBooks;
@@ -37,9 +37,12 @@ export class AppComponent {
     })
     
     this.bookService.loadAuthors().subscribe(result=>{
-      this.authors = result.data.allAuthors
+      this.authors = result.data.allAuthors;
+      console.log("authors : ",this.authors);
 
     })      
+    console.log(this.authors);
+    
   }
 submit(){
   this.bookService.addBook(this.title,this.pages).subscribe(  
